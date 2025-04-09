@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect('tu-cadena-de-conexion', {
+    const conn = await mongoose.connect('mongodb://localhost:27017/teapptro', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });

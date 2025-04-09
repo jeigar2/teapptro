@@ -1,6 +1,6 @@
 # Guía paso a paso
 
-Comenzar con la configuración del entorno de desarrollo y la estructura básica del proyecto. 
+Comenzar con la configuración del entorno de desarrollo y la estructura básica del proyecto.
 
 ## 1. Configuración del Entorno de Desarrollo
 
@@ -8,9 +8,11 @@ Comenzar con la configuración del entorno de desarrollo y la estructura básica
 
 - **Node.js**: Si no lo tienes instalado, descárgalo e instálalo desde [nodejs.org](https://nodejs.org/).
 - **npm**: Viene incluido con Node.js, pero asegúrate de tener la última versión ejecutando:
+
   ```bash
   npm install -g npm
   ```
+
 - Ver las versiones de `npm` y `Node.js`
 
   ```bash
@@ -22,6 +24,7 @@ Comenzar con la configuración del entorno de desarrollo y la estructura básica
 
 1. Crea un nuevo repositorio en GitHub. `teapptro`
 2. Clona el repositorio en tu máquina local:
+
    ```bash
    git clone https://github.com/jeigar2/teapptro.git
    cd teapptro
@@ -32,21 +35,26 @@ Comenzar con la configuración del entorno de desarrollo y la estructura básica
 ### Frontend (React.js)
 
 1. **Crear una aplicación React**:
+
    ```bash
    npx create-react-app frontend
    cd frontend
    ```
-  - si hay errores ver estes posibles correcciones
+
+   - si hay errores ver estes posibles correcciones
 
 2. **Instalar dependencias adicionales**:
+
    ```bash
    npm install axios socket.io-client
    ```
+
    - `axios`: Para hacer peticiones HTTP al backend.
    - `socket.io-client`: Para la comunicación en tiempo real.
 
 3. **Estructura de carpetas**:
-   ```
+
+   ```txt
    frontend/
    ├── public/
    ├── src/
@@ -68,16 +76,20 @@ Comenzar con la configuración del entorno de desarrollo y la estructura básica
 ### Backend (Node.js con Express.js)
 
 1. **Inicializar un proyecto Node.js**:
+
    ```bash
    cd ..
    mkdir backend
    cd backend
    npm init -y
    ```
+
 2. **Instalar dependencias**:
+
    ```bash
    npm install express mongoose socket.io cors body-parser
    ```
+
    - `express`: Framework para crear el servidor.
    - `mongoose`: Para interactuar con MongoDB.
    - `socket.io`: Para la comunicación en tiempo real.
@@ -85,7 +97,8 @@ Comenzar con la configuración del entorno de desarrollo y la estructura básica
    - `body-parser`: Para parsear el cuerpo de las solicitudes HTTP.
 
 3. **Estructura de carpetas**:
-   ```
+
+   ```txt
    backend/
    ├── models/
    │   ├── Play.js
@@ -114,6 +127,7 @@ Comenzar con la configuración del entorno de desarrollo y la estructura básica
 
 2. **Configurar la conexión a MongoDB**:
    - En `backend/config/db.js`:
+
      ```javascript
      const mongoose = require('mongoose');
 
@@ -137,6 +151,7 @@ Comenzar con la configuración del entorno de desarrollo y la estructura básica
 
 1. **Configurar el servidor**:
    - En `backend/server.js`:
+
      ```javascript
      const express = require('express');
      const cors = require('cors');
@@ -186,6 +201,7 @@ Comenzar con la configuración del entorno de desarrollo y la estructura básica
 
 1. **Modelo de Obra (Play)**:
    - En `backend/models/Play.js`:
+
      ```javascript
      const mongoose = require('mongoose');
 
@@ -207,6 +223,7 @@ Comenzar con la configuración del entorno de desarrollo y la estructura básica
 
 2. **Modelo de Usuario (User)**:
    - En `backend/models/User.js`:
+
      ```javascript
      const mongoose = require('mongoose');
 
@@ -221,6 +238,7 @@ Comenzar con la configuración del entorno de desarrollo y la estructura básica
 
 3. **Modelo de Diálogo (Dialogue)**:
    - En `backend/models/Dialogue.js`:
+
      ```javascript
      const mongoose = require('mongoose');
 
@@ -239,6 +257,7 @@ Comenzar con la configuración del entorno de desarrollo y la estructura básica
 
 1. **Controlador de Obras (PlayController)**:
    - En `backend/controllers/playController.js`:
+
      ```javascript
      const Play = require('../models/Play');
 
@@ -258,6 +277,7 @@ Comenzar con la configuración del entorno de desarrollo y la estructura básica
 
 2. **Rutas de Obras (PlayRoutes)**:
    - En `backend/routes/playRoutes.js`:
+
      ```javascript
      const express = require('express');
      const { uploadPlay } = require('../controllers/playController');
@@ -272,12 +292,14 @@ Comenzar con la configuración del entorno de desarrollo y la estructura básica
 ## 7. Iniciar el Proyecto
 
 1. **Iniciar el servidor backend**:
+
    ```bash
    cd backend
    node server.js
    ```
 
 2. **Iniciar el servidor frontend**:
+
    ```bash
    cd ../frontend
    npm start
@@ -289,6 +311,7 @@ Comenzar con la configuración del entorno de desarrollo y la estructura básica
 - **Verificar la base de datos**: Asegúrate de que la obra se haya guardado correctamente en MongoDB.
 
 ## Conclusión
+
 Hemos configurado la estructura básica del proyecto, tanto en el frontend como en el backend. Ahora podemos comenzar a implementar las funcionalidades específicas, como la subida y análisis de texto, la selección de obras y personajes, y la interfaz de diálogos.
 
 ¿Te gustaría continuar con alguna de estas funcionalidades en particular? ¡Estoy listo para ayudarte en lo que necesites!
